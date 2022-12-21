@@ -1,0 +1,61 @@
+@charset 'utf-8';
+
+@mixin flex-col($ratio, $distribute1: 0, $distribute2: 0) {
+    flex: $distribute1 $distribute2 $ratio;
+}
+@mixin fit-image {
+    object-fit: contain;
+    width: inherit;
+}
+@mixin article-area($font-sizing) {
+    font-size: $font-sizing;
+    /* 文字+下空間 */
+    // height: 22px;
+    padding-bottom: 9px;
+    line-height: $font-sizing;
+}
+
+h1 { display: none; }
+#container {
+    /* 見本1263px */
+    width: 100%;
+    background-color: #948752;
+    header {
+        width: 72%;
+        ul li {
+            display: inline-block;
+        }
+    }
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 72%;
+        aside.left-plan {
+            width: 47vw;
+            img {
+                text-align: center;
+            }
+            #flex-plan {
+                display: flex;
+                flex-wrap: wrap;
+                @include flex-col(22%);
+                align-items: flex-start;
+                margin-right: 10px;
+                img {
+                    object-fit: contain;
+                    width: inherit;
+                }
+                .detail {
+                    @include flex-col(51%);
+                    dl > * {
+                        @include article-area(13px);
+                        p {
+                            @include article-area(13px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

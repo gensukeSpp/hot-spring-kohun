@@ -1,0 +1,55 @@
+@charset "UTF-8";
+h1 {
+  display: none;
+}
+
+#container {
+  /* 見本1263px */
+  width: 100%;
+  background-color: #948752;
+}
+#container header {
+  width: 72%;
+}
+#container header ul li {
+  display: inline-block;
+}
+#container main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 72%;
+}
+#container main aside.left-plan {
+  width: 47vw;
+}
+#container main aside.left-plan img {
+  text-align: center;
+}
+#container main aside.left-plan #flex-plan {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 22%;
+  align-items: flex-start;
+  margin-right: 10px;
+}
+#container main aside.left-plan #flex-plan img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: inherit;
+}
+#container main aside.left-plan #flex-plan .detail {
+  flex: 0 0 51%;
+}
+#container main aside.left-plan #flex-plan .detail dl > * {
+  font-size: 13px;
+  /* 文字+下空間 */
+  padding-bottom: 9px;
+  line-height: 13px;
+}
+#container main aside.left-plan #flex-plan .detail dl > * p {
+  font-size: 13px;
+  /* 文字+下空間 */
+  padding-bottom: 9px;
+  line-height: 13px;
+}/*# sourceMappingURL=style.css.map */
