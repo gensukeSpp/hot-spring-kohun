@@ -9,7 +9,8 @@ h1 {
   background-color: #948752;
 }
 #container header {
-  width: 72%;
+  width: 73%;
+  margin: 0 auto;
 }
 #container header ul li {
   display: inline-block;
@@ -17,39 +18,59 @@ h1 {
 #container main {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  width: 72%;
+  width: 73%;
+  margin: 0 auto;
+  /* .left-plan */
 }
 #container main aside.left-plan {
+  /* 見本600px */
   width: 47vw;
 }
 #container main aside.left-plan img {
   text-align: center;
 }
-#container main aside.left-plan #flex-plan {
+#container main aside.left-plan article {
+  padding: 5% 0 5% 5%;
+}
+#container main aside.left-plan article #plan-flex {
   display: flex;
   flex-wrap: wrap;
-  flex: 0 0 22%;
+  flex: 0 0 30%;
   align-items: flex-start;
   margin-right: 10px;
 }
-#container main aside.left-plan #flex-plan img {
+#container main aside.left-plan article #plan-flex .plan-image a img {
   -o-object-fit: contain;
      object-fit: contain;
   width: inherit;
 }
-#container main aside.left-plan #flex-plan .detail {
-  flex: 0 0 51%;
+#container main aside.left-plan article #plan-flex dl.detail {
+  flex: 0 0 65%;
 }
-#container main aside.left-plan #flex-plan .detail dl > * {
+#container main aside.left-plan article #plan-flex dl.detail dt {
   font-size: 13px;
   /* 文字+下空間 */
   padding-bottom: 9px;
   line-height: 13px;
 }
-#container main aside.left-plan #flex-plan .detail dl > * p {
-  font-size: 13px;
+#container main aside.left-plan article #plan-flex dl.detail dd p {
+  font-size: 10px;
   /* 文字+下空間 */
   padding-bottom: 9px;
-  line-height: 13px;
+  line-height: 10px;
+}
+#container main aside.right-info {
+  width: 24vw;
+}
+#container footer nav {
+  float: left;
+}
+#container footer .info-right {
+  float: right;
+}
+#container footer .info-right ul li {
+  text-align: right;
+}
+#container footer .foot .copyright {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

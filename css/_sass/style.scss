@@ -1,5 +1,6 @@
 @charset 'utf-8';
 
+$item-center: 0 auto;
 @mixin flex-col($ratio, $distribute1: 0, $distribute2: 0) {
     flex: $distribute1 $distribute2 $ratio;
 }
@@ -21,7 +22,8 @@ h1 { display: none; }
     width: 100%;
     background-color: #948752;
     header {
-        width: 72%;
+        width: 73%;
+        margin: $item-center;
         ul li {
             display: inline-block;
         }
@@ -29,32 +31,55 @@ h1 { display: none; }
     main {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        width: 72%;
+        // justify-content: center;
+        width: 73%;
+        margin: $item-center;
         aside.left-plan {
+            /* 見本600px */
             width: 47vw;
             img {
                 text-align: center;
             }
-            #flex-plan {
-                display: flex;
-                flex-wrap: wrap;
-                @include flex-col(22%);
-                align-items: flex-start;
-                margin-right: 10px;
-                img {
-                    object-fit: contain;
-                    width: inherit;
-                }
-                .detail {
-                    @include flex-col(51%);
-                    dl > * {
-                        @include article-area(13px);
-                        p {
+            article {
+                padding: 5% 0 5% 5%;
+                #plan-flex {
+                    display: flex;
+                    flex-wrap: wrap;
+                    @include flex-col(30%);
+                    align-items: flex-start;
+                    margin-right: 10px;
+                    .plan-image a img {
+                        @include fit-image;
+                    }
+                    dl.detail {
+                        @include flex-col(65%);
+                        dt {
                             @include article-area(13px);
+                        }
+                        dd p {
+                            @include article-area(10px);
                         }
                     }
                 }
+            }
+        }/* .left-plan */
+        aside.right-info {
+            width: 24vw;
+        }
+    }
+    footer {
+        nav {
+            float: left;
+        }
+        .info-right {
+            float: right;
+            ul li {
+                text-align: right;
+            }
+        }
+        .foot {
+            .copyright {
+                text-align: center;
             }
         }
     }
