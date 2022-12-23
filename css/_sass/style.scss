@@ -4,9 +4,11 @@ $item-center: 0 auto;
 @mixin flex-col($ratio, $distribute1: 0, $distribute2: 0) {
     flex: $distribute1 $distribute2 $ratio;
 }
-@mixin fit-image {
-    object-fit: contain;
-    width: inherit;
+@mixin fit-image($w: inherit) {
+    img {
+        object-fit: contain;
+        width: $w;        
+    }    
 }
 @mixin article-area($font-sizing) {
     font-size: $font-sizing;
@@ -24,8 +26,15 @@ h1 { display: none; }
     header {
         width: 73%;
         margin: $item-center;
-        ul li {
-            display: inline-block;
+        ul.head-menu {
+            text-align: center;
+            li {
+                display: inline-block;
+                width: 16%;
+                a {
+                    @include fit-image();
+                }
+            }
         }
     }
     main {
@@ -45,11 +54,11 @@ h1 { display: none; }
                 #plan-flex {
                     display: flex;
                     flex-wrap: wrap;
-                    @include flex-col(30%);
                     align-items: flex-start;
                     margin-right: 10px;
-                    .plan-image a img {
-                        @include fit-image;
+                    .plan-image {
+                        @include flex-col(30%);
+                        @include fit-image(100%);
                     }
                     dl.detail {
                         @include flex-col(65%);

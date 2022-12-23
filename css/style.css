@@ -12,8 +12,17 @@ h1 {
   width: 73%;
   margin: 0 auto;
 }
-#container header ul li {
+#container header ul.head-menu {
+  text-align: center;
+}
+#container header ul.head-menu li {
   display: inline-block;
+  width: 16%;
+}
+#container header ul.head-menu li a img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: inherit;
 }
 #container main {
   display: flex;
@@ -35,14 +44,16 @@ h1 {
 #container main aside.left-plan article #plan-flex {
   display: flex;
   flex-wrap: wrap;
-  flex: 0 0 30%;
   align-items: flex-start;
   margin-right: 10px;
 }
-#container main aside.left-plan article #plan-flex .plan-image a img {
+#container main aside.left-plan article #plan-flex .plan-image {
+  flex: 0 0 30%;
+}
+#container main aside.left-plan article #plan-flex .plan-image img {
   -o-object-fit: contain;
      object-fit: contain;
-  width: inherit;
+  width: 100%;
 }
 #container main aside.left-plan article #plan-flex dl.detail {
   flex: 0 0 65%;
