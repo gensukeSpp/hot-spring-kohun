@@ -26,8 +26,12 @@ h1 { display: none; }
     header {
         width: 73%;
         margin: $item-center;
+        position: relative;
         ul.head-menu {
+            width: 100%;
             text-align: center;
+            position: absolute;
+            bottom: 1%;
             li {
                 display: inline-block;
                 width: 16%;
@@ -36,34 +40,42 @@ h1 { display: none; }
                 }
             }
         }
+        // img {
+        //     position: absolute;
+        //     bottom: 1%;
+        // }
     }
     main {
         display: flex;
         flex-wrap: wrap;
-        // justify-content: center;
+        justify-content: center;
         width: 73%;
         margin: $item-center;
         aside.left-plan {
             /* 見本600px */
             width: 47vw;
-            img {
+            .belt-image {
                 text-align: center;
+                line-height: 0;
+                margin: 30px 0;
             }
             article {
-                padding: 5% 0 5% 5%;
+                padding: 0 5%;
                 #plan-flex {
                     display: flex;
                     flex-wrap: wrap;
                     align-items: flex-start;
-                    margin-right: 10px;
+                    line-height: 0;
+                    margin-bottom: 31px;
                     .plan-image {
                         @include flex-col(30%);
                         @include fit-image(100%);
                     }
                     dl.detail {
                         @include flex-col(65%);
+                        margin-left: 10px;
                         dt {
-                            @include article-area(13px);
+                            @include article-area(1rem);
                         }
                         dd p {
                             @include article-area(10px);
@@ -74,16 +86,26 @@ h1 { display: none; }
         }/* .left-plan */
         aside.right-info {
             width: 24vw;
+            > * {
+                padding: 0 7%;
+            }
         }
     }
     footer {
+        width: 73vw;
+        margin: $item-center;
         nav {
             float: left;
         }
         .info-right {
-            float: right;
+            // float: right;
             ul li {
                 text-align: right;
+            }
+            &::after {
+                content: "";
+                display: block;
+                clear: both;            
             }
         }
         .foot {
