@@ -117,9 +117,7 @@ h1 { display: none; }
         }/* .left-plan */
         aside.right-info {
             width: 24vw;
-            > * {
-                padding: 0 7%;
-            }
+            padding: 0 3.5%;
             .belt-image {
                 text-align: center;
                 line-height: 0;
@@ -128,12 +126,18 @@ h1 { display: none; }
             ul.new-info {
                 color: white;
                 li:nth-child(odd) {
-                    font-size: 11px;
+                    font-size: 12px;
                 }
                 li:nth-child(even) {
-                    font-size: 12px;
+                    font-size: 13px;
                     text-decoration: $anchor-reset;
                     border-bottom: 1px solid #D7A71C;
+                }
+            }
+            .right-banner {
+                > * {
+                    display: block;
+                    margin: 15px 0;
                 }
             }
         }
@@ -147,25 +151,48 @@ h1 { display: none; }
         }
     }
     footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
         width: 73vw;
         margin: $item-center;
         background-color: black;
-        nav {
+        position: relative;
+        nav#left-navi {
             // float: left;
             display: flex;
             flex-wrap: wrap;
+            // width: 30%;
+            @include flex-col(30%);
             color: white;
+            h4 {
+                @include flex-col(100%);
+                text-align: center
+            }
             ul.sitemap {
-                // &:nth-child(2) {
-                //     float: left;
+                // &:nth-of-type(2) {
+                //     float: right;
                 // }
+                @include flex-col(50%);
                 li {
                     text-decoration: $anchor-reset;
+                    list-style-type: disc;
+                    list-style-position: inside;
+                    font-size: 11px;
+                    // text-align: center;
                 }
             }
+            // &::after {
+            //     content: "";
+            //     display: block;
+            //     clear: both;            
+            // }
         }
-        .info-right {
-            // float: right;
+        aside#info-right {
+            float: right;
+            // @include flex-col(30%);
+            position: absolute;
+            right: 0;
             h3 {
                 text-align: right;
                 color: white;
@@ -174,6 +201,7 @@ h1 { display: none; }
                 li {
                     text-align: right;
                     color: white;
+                    font-size: 11px;
                 }
             }
             &::after {
@@ -183,6 +211,7 @@ h1 { display: none; }
             }
         }
         .foot {
+            @include flex-col(100%);
             p.copyright {
                 text-align: center;
                 color: white;

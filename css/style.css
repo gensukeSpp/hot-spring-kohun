@@ -109,9 +109,7 @@ h1 {
 }
 #container main aside.right-info {
   width: 24vw;
-}
-#container main aside.right-info > * {
-  padding: 0 7%;
+  padding: 0 3.5%;
 }
 #container main aside.right-info .belt-image {
   text-align: center;
@@ -122,12 +120,16 @@ h1 {
   color: white;
 }
 #container main aside.right-info ul.new-info li:nth-child(odd) {
-  font-size: 11px;
+  font-size: 12px;
 }
 #container main aside.right-info ul.new-info li:nth-child(even) {
-  font-size: 12px;
+  font-size: 13px;
   text-decoration: underline;
   border-bottom: 1px solid #D7A71C;
+}
+#container main aside.right-info .right-banner > * {
+  display: block;
+  margin: 15px 0;
 }
 #container main::after {
   content: "";
@@ -139,30 +141,54 @@ h1 {
   height: 4px;
 }
 #container footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   width: 73vw;
   margin: 0 auto;
   background-color: black;
+  position: relative;
 }
-#container footer nav {
+#container footer nav#left-navi {
   display: flex;
   flex-wrap: wrap;
+  flex: 0 0 30%;
   color: white;
 }
-#container footer nav ul.sitemap li {
+#container footer nav#left-navi h4 {
+  flex: 0 0 100%;
+  text-align: center;
+}
+#container footer nav#left-navi ul.sitemap {
+  flex: 0 0 50%;
+}
+#container footer nav#left-navi ul.sitemap li {
   text-decoration: underline;
+  list-style-type: disc;
+  list-style-position: inside;
+  font-size: 11px;
 }
-#container footer .info-right h3 {
+#container footer aside#info-right {
+  float: right;
+  position: absolute;
+  right: 0;
+}
+#container footer aside#info-right h3 {
   text-align: right;
   color: white;
 }
-#container footer .info-right ul.infomation li {
+#container footer aside#info-right ul.infomation li {
   text-align: right;
   color: white;
+  font-size: 11px;
 }
-#container footer .info-right::after {
+#container footer aside#info-right::after {
   content: "";
   display: block;
   clear: both;
+}
+#container footer .foot {
+  flex: 0 0 100%;
 }
 #container footer .foot p.copyright {
   text-align: center;
