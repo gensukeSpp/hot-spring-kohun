@@ -15,6 +15,9 @@ h1 {
 }
 #container header img.top-image {
   display: block;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }
 #container header ul.head-menu {
   display: table;
@@ -116,14 +119,18 @@ h1 {
   line-height: 0;
   margin: 30px 0;
 }
-#container main aside.right-info ul.new-info {
+#container main aside.right-info ul.news {
   color: white;
 }
-#container main aside.right-info ul.new-info li:nth-child(odd) {
-  font-size: 12px;
+#container main aside.right-info ul.news li {
+  margin-bottom: 6px;
 }
-#container main aside.right-info ul.new-info li:nth-child(even) {
-  font-size: 13px;
+#container main aside.right-info ul.news li:nth-child(odd) {
+  font-size: 12px;
+  padding-bottom: 13px;
+}
+#container main aside.right-info ul.news li:nth-child(even) {
+  font-size: 1rem;
   text-decoration: underline;
   border-bottom: 1px solid #D7A71C;
 }
@@ -144,48 +151,56 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  justify-content: space-between;
   width: 73vw;
   margin: 0 auto;
+  padding: 0 3%;
   background-color: black;
-  position: relative;
 }
-#container footer nav#left-navi {
-  display: flex;
-  flex-wrap: wrap;
+#container footer nav#f_left-navi {
+  padding: 2.5% 0;
   flex: 0 0 30%;
   color: white;
 }
-#container footer nav#left-navi h4 {
+#container footer nav#f_left-navi h4 {
   flex: 0 0 100%;
   text-align: center;
 }
-#container footer nav#left-navi ul.sitemap {
-  flex: 0 0 50%;
+#container footer nav#f_left-navi ul.sitemap:nth-of-type(1) {
+  float: left;
 }
-#container footer nav#left-navi ul.sitemap li {
+#container footer nav#f_left-navi ul.sitemap:nth-of-type(2) {
+  float: right;
+}
+#container footer nav#f_left-navi ul.sitemap li {
   text-decoration: underline;
   list-style-type: disc;
   list-style-position: inside;
-  font-size: 11px;
+  font-size: 12px;
+  padding-bottom: 14px;
 }
-#container footer aside#info-right {
-  float: right;
+#container footer #f_right-info {
+  flex: 0 0 25%;
+  position: relative;
+}
+#container footer #f_right-info h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: right;
+  color: white;
   position: absolute;
+  top: 20%;
   right: 0;
 }
-#container footer aside#info-right h3 {
+#container footer #f_right-info ul.infomation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#container footer #f_right-info ul.infomation li {
   text-align: right;
   color: white;
-}
-#container footer aside#info-right ul.infomation li {
-  text-align: right;
-  color: white;
-  font-size: 11px;
-}
-#container footer aside#info-right::after {
-  content: "";
-  display: block;
-  clear: both;
+  font-size: 12px;
 }
 #container footer .foot {
   flex: 0 0 100%;

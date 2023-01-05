@@ -31,6 +31,8 @@ h1 { display: none; }
         position: relative;
         img.top-image {
             display: block;
+            object-fit: contain;
+            width: 100%;
         }
         ul.head-menu {
             display: table;
@@ -98,7 +100,7 @@ h1 { display: none; }
                     }
                     dl.detail {
                         @include flex-col(65%);
-                        margin-left: 10px;
+                        margin-left: 11px;
                         dt {
                             @include article-area(1rem);
                             color: #E5E3B4;
@@ -123,13 +125,17 @@ h1 { display: none; }
                 line-height: 0;
                 margin: 30px 0;
             }
-            ul.new-info {
+            ul.news {
                 color: white;
+                li {
+                    margin-bottom: 6px;
+                }
                 li:nth-child(odd) {
-                    font-size: 12px;
+                    font-size: 14px;
+                    padding-bottom: 13px;
                 }
                 li:nth-child(even) {
-                    font-size: 13px;
+                    font-size: 1rem;
                     text-decoration: $anchor-reset;
                     border-bottom: 1px solid #D7A71C;
                 }
@@ -154,15 +160,18 @@ h1 { display: none; }
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        justify-content: space-between;
         width: 73vw;
         margin: $item-center;
+        padding: 0 3%;
         background-color: black;
-        position: relative;
-        nav#left-navi {
+        // position: relative;
+        nav#f_left-navi {
             // float: left;
-            display: flex;
-            flex-wrap: wrap;
+            // display: flex;
+            // flex-wrap: wrap;
             // width: 30%;
+            padding: 2.5% 0;
             @include flex-col(30%);
             color: white;
             h4 {
@@ -170,16 +179,20 @@ h1 { display: none; }
                 text-align: center
             }
             ul.sitemap {
-                // &:nth-of-type(2) {
-                //     float: right;
-                // }
-                @include flex-col(50%);
+                &:nth-of-type(1) {
+                    float: left;
+                }
+                &:nth-of-type(2) {
+                    float: right;
+                }
+                // @include flex-col(50%);
                 li {
                     text-decoration: $anchor-reset;
                     list-style-type: disc;
                     list-style-position: inside;
-                    font-size: 11px;
+                    font-size: 12px;
                     // text-align: center;
+                    padding-bottom: 14px;
                 }
             }
             // &::after {
@@ -188,27 +201,34 @@ h1 { display: none; }
             //     clear: both;            
             // }
         }
-        aside#info-right {
-            float: right;
-            // @include flex-col(30%);
-            position: absolute;
-            right: 0;
+        #f_right-info {
+            // float: right;
+            @include flex-col(25%);
+            position: relative;
             h3 {
+                font-size: 1.5em;
+                font-weight: bold;
                 text-align: right;
                 color: white;
+                position: absolute;
+                top: 20%;
+                right: 0;
             }
             ul.infomation {
+                position: absolute;
+                bottom: 0;
+                right: 0;
                 li {
                     text-align: right;
                     color: white;
-                    font-size: 11px;
+                    font-size: 12px;                    
                 }
             }
-            &::after {
-                content: "";
-                display: block;
-                clear: both;            
-            }
+            // &::after {
+            //     content: "";
+            //     display: block;
+            //     clear: both;            
+            // }
         }
         .foot {
             @include flex-col(100%);
