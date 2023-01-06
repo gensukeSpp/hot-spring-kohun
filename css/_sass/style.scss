@@ -7,10 +7,13 @@ $anchor-reset: underline;
     flex: $distribute1 $distribute2 $ratio;
 }
 @mixin fit-image($w: inherit) {
-    img {
-        object-fit: contain;
-        width: $w;        
-    }    
+    object-fit: contain;
+    width: $w;        
+}
+@mixin back-image($path) {
+    background-image: url($path);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 @mixin article-area($font-sizing) {
     font-size: $font-sizing;
@@ -35,23 +38,33 @@ h1 { display: none; }
             width: 100%;
         }
         ul.head-menu {
-            display: table;
+            // display: table;
             width: 98%;
             height: 15%;
             text-align: center;
             margin: 0 1%;
-            background-color: #72673F;
-            opacity: .7;
+            padding-top: .75%;
+            background-color: rgba(127, 119, 82, 0.7);
+            // opacity: .7;
             position: absolute;
             bottom: .2%;
             li {
                 /* 高さ中央のため */
-                // display: inline-block;
-                display: table-cell;
+                display: inline-block;
+                // display: table-cell;
                 width: 16%;
-                vertical-align: bottom;
-                a {
-                    @include fit-image();
+                height: 100%;
+                // vertical-align: bottom;
+                a img {
+                    @include fit-image(100%);
+                    &:hover {
+                        opacity: .1;
+                    }
+                }
+            }
+            @for $i from 1 through 6 {
+                li:nth-child(#{$i}) {
+                    @include back-image("../img/nav_0#{$i}_bg.jpg");
                 }
             }
         }
@@ -96,7 +109,9 @@ h1 { display: none; }
                     margin-bottom: 31px;
                     .plan-image {
                         @include flex-col(30%);
-                        @include fit-image(100%);
+                        a img {
+                            @include fit-image(100%);
+                        }
                     }
                     dl.detail {
                         @include flex-col(65%);
@@ -106,7 +121,7 @@ h1 { display: none; }
                             color: #E5E3B4;
                         }
                         dd p {
-                            @include article-area(10px);
+                            @include article-area(11px);
                             color: white;
                         }
                     }
@@ -127,9 +142,6 @@ h1 { display: none; }
             }
             ul.news {
                 color: white;
-                li {
-                    margin-bottom: 6px;
-                }
                 li:nth-child(odd) {
                     font-size: 14px;
                     padding-bottom: 13px;
@@ -138,6 +150,7 @@ h1 { display: none; }
                     font-size: 1rem;
                     text-decoration: $anchor-reset;
                     border-bottom: 1px solid #D7A71C;
+                    margin-bottom: 6px;
                 }
             }
             .right-banner {
@@ -190,9 +203,9 @@ h1 { display: none; }
                     text-decoration: $anchor-reset;
                     list-style-type: disc;
                     list-style-position: inside;
-                    font-size: 12px;
+                    font-size: 14px;
                     // text-align: center;
-                    padding-bottom: 14px;
+                    padding: 6px 0;
                 }
             }
             // &::after {
@@ -206,7 +219,7 @@ h1 { display: none; }
             @include flex-col(25%);
             position: relative;
             h3 {
-                font-size: 1.5em;
+                font-size: 2em;
                 font-weight: bold;
                 text-align: right;
                 color: white;
@@ -221,7 +234,10 @@ h1 { display: none; }
                 li {
                     text-align: right;
                     color: white;
-                    font-size: 12px;                    
+                    font-size: 1em;                    
+                }
+                li.url {
+                    font-size: 12px;
                 }
             }
             // &::after {
@@ -235,7 +251,7 @@ h1 { display: none; }
             p.copyright {
                 text-align: center;
                 color: white;
-                font-size: 10px;
+                font-size: 11px;
             }
         }
     }
