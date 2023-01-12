@@ -7,15 +7,16 @@ h1 {
   /* 見本1263px */
   width: 100%;
   background-color: #948752;
-  position: relative;
+  /* .top-bgと相当違う */
 }
 #container .top-bg {
-  background-image: url(../img/bg_top_decoration.png);
-  background-size: cover;
+  height: 0;
+  text-align: center;
+}
+#container .top-bg img {
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 81vw;
-  height: 104vh;
-  position: absolute;
-  left: 9%;
 }
 #container header {
   width: 73vw;
@@ -233,7 +234,7 @@ h1 {
 }
 #container footer #f_right-info {
   flex: 0 0 25%;
-  padding-right: 3%;
+  margin-right: 3%;
   position: relative;
 }
 #container footer #f_right-info h3 {
@@ -276,11 +277,13 @@ h1 {
   height: 4px;
 }
 #container .bottom-bg {
-  background-image: url(../img/bg_bottom_decoration.png);
-  background-size: cover;
   width: 81vw;
-  height: 102vh;
+  height: 0;
+  position: relative;
+  /* 下記absoluteのためこのように */
+  margin: 0 auto;
+}
+#container .bottom-bg img {
   position: absolute;
-  bottom: 4px;
-  left: 9%;
+  bottom: 0;
 }/*# sourceMappingURL=style.css.map */

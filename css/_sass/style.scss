@@ -28,14 +28,20 @@ h1 { display: none; }
     /* 見本1263px */
     width: 100%;
     background-color: #948752;
-    position: relative;
+    // position: relative;
     .top-bg {
-        background-image: url(../img/bg_top_decoration.png); 
-        background-size: cover;
-        width: 81vw;
-        height: 104vh;
-        position: absolute;
-        left: 9%;     
+        // background-image: url(../img/bg_top_decoration.png); 
+        // background-size: cover;
+        // width: 81vw;
+        // height: 104vh;
+        // position: relative;
+        height: 0;
+        text-align: center;
+        img {
+            @include fit-image(81vw);
+            // position: absolute;
+            // right: 9.5%;
+        }
     }
     header {
         width: 73vw;
@@ -233,7 +239,7 @@ h1 { display: none; }
         #f_right-info {
             // float: right;
             @include flex-col(25%);
-            padding-right: 3%;
+            margin-right: 3%;
             position: relative;
             h3 {
                 font-size: 2em;
@@ -279,13 +285,20 @@ h1 { display: none; }
             height: 4px;
         }
     }
+    /* .top-bgと相当違う */
     .bottom-bg {
-        background-image: url(../img/bg_bottom_decoration.png); 
-        background-size: cover;
+        // background-image: url(../img/bg_bottom_decoration.png); 
+        // background-size: cover;
         width: 81vw;
-        height: 102vh;
-        position: absolute;
-        bottom: 4px;
-        left: 9%;     
+        height: 0;
+        position: relative;
+        /* 下記absoluteのためこのように */
+        // text-align: center;
+        margin: $item-center;
+        img {
+            position: absolute;
+            bottom: 0;
+        // right: 9.5%;
+        }
     }
 }
