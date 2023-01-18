@@ -20,7 +20,7 @@ $anchor-reset: underline;
     /* 文字+下空間 */
     // height: 22px;
     padding-bottom: 9px;
-    line-height: $font-sizing;
+    line-height: calc($font-sizing*1.5);
 }
 
 h1 { display: none; }
@@ -78,7 +78,7 @@ h1 { display: none; }
                 /* 高さ中央のため */
                 display: inline-block;
                 // display: table-cell;
-                width: 16%;
+                width: 15.5%;
                 // vertical-align: bottom;
                 margin: 2px;
                 a img {
@@ -147,7 +147,7 @@ h1 { display: none; }
                             color: #E5E3B4;
                         }
                         dd p {
-                            @include article-area(11px);
+                            @include article-area(0.75em);
                             color: white;
                         }
                     }
@@ -221,11 +221,17 @@ h1 { display: none; }
             color: white;
             h4 {
                 @include flex-col(100%);
-                text-align: center
+                font-size: 1.25em;
+                text-align: center;
             }
             ul.sitemap {
                 &:nth-of-type(1) {
                     float: left;
+                    // &::after {
+                    //     content: "";
+                    //     display: block;
+                    //     clear: both;            
+                    // }
                 }
                 &:nth-of-type(2) {
                     float: right;
@@ -235,36 +241,32 @@ h1 { display: none; }
                     text-decoration: $anchor-reset;
                     list-style-type: disc;
                     list-style-position: inside;
-                    font-size: 14px;
+                    font-size: 0.85em;
                     // text-align: center;
                     padding: 6px 0;
                 }
             }
-            // &::after {
-            //     content: "";
-            //     display: block;
-            //     clear: both;            
-            // }
         }
         #f_right-info {
             // float: right;
-            @include flex-col(25%);
+            @include flex-col(30%);
             /* positionだからpaddingは効かない */
-            margin-right: 3%;
-            position: relative;
+            padding: 5% 3% 3% 0;
+            position: static;
             h3 {
                 font-size: 2em;
                 font-weight: bold;
                 text-align: right;
                 color: white;
-                position: absolute;
-                top: 20%;
-                right: 0;
+                margin-bottom: 10%;
+                // position: absolute;
+                // top: 15%;
+                // right: 0;
             }
             ul.infomation {
-                position: absolute;
-                bottom: 9%;
-                right: 0;
+                // position: absolute;
+                // bottom: 9%;
+                // right: 0;
                 li {
                     text-align: right;
                     color: white;

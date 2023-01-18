@@ -57,7 +57,7 @@ h1 {
 #container header ul.head-menu li {
   /* 高さ中央のため */
   display: inline-block;
-  width: 16%;
+  width: 15.5%;
   margin: 2px;
 }
 #container header ul.head-menu li a img {
@@ -154,14 +154,14 @@ h1 {
   font-size: 1.25em;
   /* 文字+下空間 */
   padding-bottom: 9px;
-  line-height: 1.25em;
+  line-height: 1.875em;
   color: #E5E3B4;
 }
 #container main aside.left-plan article #plan-flex dl.detail dd p {
-  font-size: 11px;
+  font-size: 0.75em;
   /* 文字+下空間 */
   padding-bottom: 9px;
-  line-height: 11px;
+  line-height: 1.125em;
   color: white;
 }
 #container main aside.left-plan article .others {
@@ -228,6 +228,7 @@ h1 {
 }
 #container footer nav#f_left-navi h4 {
   flex: 0 0 100%;
+  font-size: 1.25em;
   text-align: center;
 }
 #container footer nav#f_left-navi ul.sitemap:nth-of-type(1) {
@@ -240,28 +241,21 @@ h1 {
   text-decoration: underline;
   list-style-type: disc;
   list-style-position: inside;
-  font-size: 14px;
+  font-size: 0.85em;
   padding: 6px 0;
 }
 #container footer #f_right-info {
-  flex: 0 0 25%;
+  flex: 0 0 30%;
   /* positionだからpaddingは効かない */
-  margin-right: 3%;
-  position: relative;
+  padding: 5% 3% 3% 0;
+  position: static;
 }
 #container footer #f_right-info h3 {
   font-size: 2em;
   font-weight: bold;
   text-align: right;
   color: white;
-  position: absolute;
-  top: 20%;
-  right: 0;
-}
-#container footer #f_right-info ul.infomation {
-  position: absolute;
-  bottom: 9%;
-  right: 0;
+  margin-bottom: 10%;
 }
 #container footer #f_right-info ul.infomation li {
   text-align: right;
