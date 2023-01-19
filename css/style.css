@@ -10,7 +10,7 @@ h1 {
   /* .top-bgと相当違う */
 }
 #container > :not(:first-child, :last-child) {
-  box-shadow: 0 0 2px 6px rgb(102, 93, 55);
+  box-shadow: 0 -6px 2px 6px rgb(102, 93, 55);
 }
 #container .top-bg {
   height: 0;
@@ -25,6 +25,7 @@ h1 {
   width: 73vw;
   margin: 0 auto;
   position: relative;
+  z-index: 3;
 }
 #container header::before {
   content: "";
@@ -43,8 +44,9 @@ h1 {
   width: 100%;
 }
 #container header ul.head-menu {
-  /* これが救い */
   display: table;
+  border-collapse: separate;
+  border-spacing: 2px;
   width: 98%;
   height: 15%;
   text-align: center;
@@ -56,9 +58,8 @@ h1 {
 }
 #container header ul.head-menu li {
   /* 高さ中央のため */
-  display: inline-block;
-  width: 15.5%;
-  margin: 2px;
+  display: table-cell;
+  /* table-cellの場合親要素にborder-collapse, border-spacingでmarginを指定 */
 }
 #container header ul.head-menu li a img {
   -o-object-fit: contain;
@@ -116,7 +117,11 @@ h1 {
   width: 73vw;
   margin: 0 auto;
   background-color: black;
+  /* z-indexにはpositionが必要 */
+  position: relative;
+  z-index: 2;
   /* .left-plan */
+  /* footerのposition: relativeで吹っ飛ぶ */
 }
 #container main aside.left-plan {
   /* 見本600px */
@@ -220,6 +225,8 @@ h1 {
   margin: 0 auto;
   /* 共存できる */
   background-color: black;
+  position: relative;
+  z-index: 1;
 }
 #container footer nav#f_left-navi {
   padding: 2.5% 0 2.5% 3%;
@@ -248,7 +255,6 @@ h1 {
   flex: 0 0 30%;
   /* positionだからpaddingは効かない */
   padding: 5% 3% 3% 0;
-  position: static;
 }
 #container footer #f_right-info h3 {
   font-size: 2em;
