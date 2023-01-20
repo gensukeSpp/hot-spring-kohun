@@ -10,7 +10,7 @@ h1 {
   /* .top-bgと相当違う */
 }
 #container > :not(:first-child, :last-child) {
-  box-shadow: 0 -6px 2px 6px rgb(102, 93, 55);
+  box-shadow: 4px 0 4px 6px rgb(102, 93, 55), -4px 0 4px 6px rgb(102, 93, 55);
 }
 #container .top-bg {
   height: 0;
@@ -297,6 +297,9 @@ h1 {
   margin: 0 auto;
 }
 #container .bottom-bg img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 81vw;
   position: absolute;
   bottom: 0;
 }/*# sourceMappingURL=style.css.map */

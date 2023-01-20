@@ -29,7 +29,8 @@ h1 { display: none; }
     width: 100%;
     background-color: #948752;
     > :not(:first-child, :last-child) {
-        box-shadow: 0 -6px 2px 6px rgb(102, 93, 55);
+        // box-shadow: 0 -6px 2px 6px rgb(102, 93, 55);
+        box-shadow: 4px 0 4px 6px rgb(102 93 55), -4px 0 4px 6px rgb(102 93 55)
     }
     .top-bg {
         // background-image: url(../img/bg_top_decoration.png); 
@@ -321,6 +322,7 @@ h1 { display: none; }
         // text-align: center;
         margin: $item-center;
         img {
+            @include fit-image(81vw);
             position: absolute;
             bottom: 0;
             // right: 9.5%;
